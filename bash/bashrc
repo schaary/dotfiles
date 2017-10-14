@@ -1,0 +1,54 @@
+
+#
+# Run our main shell configuration
+#
+function source_if_exists {
+    file=${1}
+
+    if [ -f ${file} ]; then
+        source ${file}
+    fi
+}
+
+# I start to use nixOS as package manager on macOS. To find all necessary 
+# resources, we have to start the daemon first.
+source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+
+source_if_exists ${HOME}/.dotfiles/bash/shell_aliases.sh
+source_if_exists ${HOME}/.dotfiles/bash/shell_environment.sh
+source_if_exists ${HOME}/.dotfiles/bash/shell_functions.sh
+
+source_if_exists /nix/var/nix/profiles/per-user/nmaef/profile/etc/bash_completion.d/git-prompt.sh
+source_if_exists /nix/var/nix/profiles/per-user/nmaef/profile/etc/bash_completion.d/git-completion.bash
+
+# added paths
+
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWCOLORHINTS=true
+
+PROMPT_COMMAND=__prompt_command
+
+function __prompt_command() {
+    local rc="$?"
+    exit=""
+
+    if [ $rc == 0 ]; then
+        exit="\[\033[1;30m\]-"
+    else
+        exit="\[\033[0;31m\]✗"
+    fi
+
+    __git_ps1 "$exit \[\033[0;36m\]\W\[\033[0m\]" " →\[\033[0m\]  " " · %s"
+}
+
+
+#eval $(/usr/libexec/path_helper -s)
+eval "$(rbenv init -)"
+
+for i in $(ls ${HOME}/.password/*.bash)
+do
+    source ${i}
+done
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
