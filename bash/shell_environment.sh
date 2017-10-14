@@ -1,4 +1,6 @@
 
+os=$(uname -s)
+
 # My editor of choice!
 export EDITOR=nvim
 
@@ -8,7 +10,13 @@ export PATH=/usr/local/bin:${PATH}
 export PATH=${HOME}/.rbenv/bin:${PATH}
 
 # everything about my package manager nixos
-export PATH=/nix/var/nix/profiles/per-user/nmaef/profile/bin:${PATH}
+if [ "Darwin" == ${os} ]
+then
+  echo "hello Darwin"
+  export PATH=/nix/var/nix/profiles/per-user/nmaef/profile/bin:${PATH}
+else
+  echo "Hello Linux"
+fi
 
 # my personal stuff is most important :D
 export PATH=${HOME}/bin:${PATH}

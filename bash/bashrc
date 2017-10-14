@@ -12,7 +12,7 @@ function source_if_exists {
 
 # I start to use nixOS as package manager on macOS. To find all necessary 
 # resources, we have to start the daemon first.
-source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+source_if_exists /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
 source_if_exists ${HOME}/.dotfiles/bash/shell_aliases.sh
 source_if_exists ${HOME}/.dotfiles/bash/shell_environment.sh
