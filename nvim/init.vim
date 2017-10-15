@@ -185,9 +185,6 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
 
-" map silver searcher
-map <leader>a :Ag!<space>
-
 nmap <F8> :TagbarToggle<CR>
 
 noremap <leader>y "*y
