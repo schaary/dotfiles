@@ -309,7 +309,9 @@ nnoremap <C-f>b :Buffers<CR>
 nnoremap <C-f>a :Ag<CR>
 nnoremap <C-f>c :Commands<CR>
 nnoremap <C-s> :BLines<CR>
+nnoremap / :BLines<CR>
 nnoremap <C-p> :Files<CR>
+nnoremap <leader>t :Files<CR>
 
 " Disable K looking stuff up
 map K <Nop>
