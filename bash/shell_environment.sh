@@ -17,3 +17,6 @@ fi
 
 # my personal stuff is most important :D
 export PATH=${HOME}/bin:${PATH}
+
+# don't forget the present working directozy
+export PATH=.:${PATH}
