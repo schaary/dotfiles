@@ -1,5 +1,5 @@
 
-gc() {
+function gc () {
   echo $@
-  git commit -m "$@"
+  git commit -m "$*"
 }
