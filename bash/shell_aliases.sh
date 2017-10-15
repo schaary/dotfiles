@@ -27,7 +27,7 @@ fi
 alias "s"="git status --short"
 alias "gaci"="git init;git add .;git commit -m 'initial commit'"
 alias "ga"="git add"
-alias "gaa"="git add -a"
+alias "gaa"="git add --all"
 alias "gss"="git status --show-stash"
 
 # start emacs in the terminal
