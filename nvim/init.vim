@@ -303,7 +303,7 @@ endif
 
 " FZF Mapppings
 nnoremap <C-f>b :Buffers<CR>
-nnoremap <C-f>a :Ag<CR>
+nnoremap <leader>a :Ag<CR>
 nnoremap <C-f>c :Commands<CR>
 nnoremap <C-s> :BLines<CR>
 nnoremap / :BLines<CR>
