@@ -52,3 +52,6 @@ done
 
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+ 
+# Autocorrect path when using `cd`
+shopt -s cdspell
