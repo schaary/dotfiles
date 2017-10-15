@@ -302,7 +302,7 @@ endif
 :command Q q
 
 " FZF Mapppings
-nnoremap <C-f>b :Buffers<CR>
+nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>a :Ag<CR>
 nnoremap <C-f>c :Commands<CR>
 nnoremap <C-s> :BLines<CR>
