@@ -29,6 +29,7 @@ alias "gaci"="git init;git add .;git commit -m 'initial commit'"
 alias "ga"="git add"
 alias "gaa"="git add --all"
 alias "gss"="git status --show-stash"
+alias "gdt"="git difftool"
 
 # start emacs in the terminal
 alias "emacs"="emacs -nw"
@@ -36,7 +37,9 @@ alias "emacs"="emacs -nw"
 # Elixir 
 # start mix with the local mix.exs to get a context
 alias "iexm"="iex -S mix"
+alias "iex"="/usr/local/bin/iex --erl '-kernel shell_history enabled'"
 
 # I use org-mode for my task management. 
 alias "td"="emacs -nw ${HOME}/Documents/org/today.org"
 alias "h"="hostname -f"
+
