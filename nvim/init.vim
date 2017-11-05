@@ -62,6 +62,8 @@ NeoBundle 'junegunn/fzf.vim'
 " Elixir Support
 NeoBundle 'slashmili/alchemist.vim'
 
+NeoBundle 'fxn/vim-monochrome'
+
 " Execute code checks, find mistakes, in the background
 NeoBundle 'neomake/neomake'
   " Run Neomake when I save any buffer
@@ -256,12 +258,13 @@ inoremap <s-tab> <c-n>
 
 set background=dark
 " colorscheme twilight256
-set termguicolors     " enable true colors support
-let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+  " set termguicolors     " enable true colors support
+  " let ayucolor="light"  " for light version of theme
+  " let ayucolor="mirage" " for mirage version of theme
+  " let ayucolor="dark"   " for dark version of theme
+  " colorscheme ayu
 " highlight Normal ctermbg=NONE
+colorscheme monochrome
 
 " Display extra whitespace and leading tabs
 " stolen from Tim Pope (https://github.com/tpope/tpope/blob/master/.vimrc)
