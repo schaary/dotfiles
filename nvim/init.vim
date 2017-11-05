@@ -45,6 +45,7 @@ NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'elmcast/elm-vim'
 NeoBundle 'maralla/vim-toml-enhance', {'depends': 'cespare/vim-toml'}
+NeoBundle '907th/vim-auto-save'
 " "NeoBundle 'rfeldman/node-elm-test'
 "NeoBundle 'haya14busa/incsearch.vim'
 "NeoBundle 'jaxbot/semantic-highlight.vim'
