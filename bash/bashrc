@@ -43,12 +43,18 @@ function __prompt_command() {
 
 
 #eval $(/usr/libexec/path_helper -s)
-eval "$(rbenv init -)"
+if [ -d ${HOME}/.rbenv ]
+then
+  eval "$(rbenv init -)"
+fi
 
-for i in $(ls ${HOME}/.password/*.bash)
-do
-    source ${i}
-done
+if [ -d ${HOME}/.password ]
+then
+  for i in $(ls ${HOME}/.password/*.bash)
+  do
+      source ${i}
+  done
+fi
 
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
