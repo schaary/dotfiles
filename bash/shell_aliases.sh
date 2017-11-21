@@ -45,3 +45,7 @@ alias "h"="hostname -f"
 
 alias "rc"="redis-cli"
 
+# some things for tmux
+alias "tls"="tmux list-sessions"
+alias "ta"="tmux attach -t"
+
