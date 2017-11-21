@@ -43,3 +43,5 @@ alias "iex"="/usr/local/bin/iex --erl '-kernel shell_history enabled'"
 alias "td"="emacs -nw ${HOME}/Documents/org/today.org"
 alias "h"="hostname -f"
 
+alias "rc"="redis-cli"
+
