@@ -42,7 +42,7 @@ alias "mps"="mix phx.server"
 alias "mem"="mix ecto.migrate"
 alias "mec"="mix ecto.create"
 alias "med"="mix ecto.drop"
-alias "mseed"="mix run priv/repo/seed.exs"
+alias "mseed"="mix run priv/repo/seeds.exs"
 
 # I use org-mode for my task management. 
 alias "td"="emacs -nw ${HOME}/Documents/org/today.org"
