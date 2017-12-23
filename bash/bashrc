@@ -18,15 +18,14 @@ source_if_exists ${HOME}/.dotfiles/bash/shell_aliases.sh
 source_if_exists ${HOME}/.dotfiles/bash/shell_environment.sh
 source_if_exists ${HOME}/.dotfiles/bash/shell_functions.sh
 
-source_if_exists /nix/var/nix/profiles/per-user/nmaef/profile/etc/bash_completion.d/git-prompt.sh
-source_if_exists /nix/var/nix/profiles/per-user/nmaef/profile/etc/bash_completion.d/git-completion.bash
+source_if_exists /usr/local/etc/bash_completion.d/git-prompt.sh
+source_if_exists /usr/local/etc/bash_completion.d/it-completion.bash
 
 # added paths
 
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWCOLORHINTS=true
 
-PROMPT_COMMAND=__prompt_command
 
 function __prompt_command() {
     local rc="$?"
@@ -41,6 +40,7 @@ function __prompt_command() {
     __git_ps1 "$exit \[\033[0;36m\]\W\[\033[0m\]" " →\[\033[0m\]  " " · %s"
 }
 
+PROMPT_COMMAND=__prompt_command
 
 #eval $(/usr/libexec/path_helper -s)
 if [ -d ${HOME}/.rbenv ]

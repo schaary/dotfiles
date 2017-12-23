@@ -38,6 +38,11 @@ alias "emacs"="emacs -nw"
 # start mix with the local mix.exs to get a context
 alias "iexm"="iex -S mix"
 alias "iex"="/usr/local/bin/iex --erl '-kernel shell_history enabled'"
+alias "mps"="mix phoenix.server"
+alias "mec"="mix ecto.migrate"
+alias "mec"="mix ecto.create"
+alias "med"="mix ecto.drop"
+alias "mseed"="mix run priv/repo/seed.exs"
 
 # I use org-mode for my task management. 
 alias "td"="emacs -nw ${HOME}/Documents/org/today.org"
