@@ -265,7 +265,8 @@ set background=dark
   " let ayucolor="dark"   " for dark version of theme
   " colorscheme ayu
 " highlight Normal ctermbg=NONE
-colorscheme monochrome
+" colorscheme monochrome
+colorscheme solarized
 
 " Display extra whitespace and leading tabs
 " stolen from Tim Pope (https://github.com/tpope/tpope/blob/master/.vimrc)
