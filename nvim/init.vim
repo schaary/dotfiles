@@ -266,7 +266,7 @@ colorscheme twilight256
   " colorscheme ayu
 " highlight Normal ctermbg=NONE
 " colorscheme monochrome
-" colorscheme underwater
+colorscheme solarized
 
 " Display extra whitespace and leading tabs
 " stolen from Tim Pope (https://github.com/tpope/tpope/blob/master/.vimrc)
