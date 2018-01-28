@@ -140,6 +140,36 @@ nnoremap n nzz
 set relativenumber
 set number
 
+" Following lines are taken from a blog post 
+" https://blog.nickpierson.name/colemak-vim/
+" Remap movement for Colemak
+noremap n j
+noremap e k
+noremap i l
+noremap k n
+noremap s i
+noremap j e
+
+" Remap splits for Colemak / Ease of Use
+noremap <C-H> <C-W><C-H>
+noremap <C-N> <C-W><C-J>
+noremap <C-E> <C-W><C-K>
+noremap <C-I> <C-W><C-L>
+
+" Destroy arrow keys in insert mode
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+
+" Make arrow keys useful
+noremap <Up> ddkP
+noremap <Down> ddp
+noremap <Left> <<
+noremap <Right> >>
+vmap <Left> <gv
+vmap <Right> >gv
+
 :syntax on
 ":filetype plugin indent on
 :set backspace=indent,eol,start
