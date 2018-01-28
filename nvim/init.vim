@@ -288,7 +288,7 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
 
 set background=dark
-" colorscheme twilight256
+colorscheme twilight256
   " set termguicolors     " enable true colors support
   " let ayucolor="light"  " for light version of theme
   " let ayucolor="mirage" " for mirage version of theme
