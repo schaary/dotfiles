@@ -40,7 +40,12 @@ function __prompt_command() {
     __git_ps1 "$exit \[\033[0;36m\]\W\[\033[0m\]" " →\[\033[0m\]  " " · %s"
 }
 
-PROMPT_COMMAND=__prompt_command
+if [ $TERM = "dumb" ]
+then
+    PROMPT_COMMAND="$ "
+else
+    PROMPT_COMMAND=__prompt_command
+fi
 
 #eval $(/usr/libexec/path_helper -s)
 if [ -d ${HOME}/.rbenv ]
