@@ -20,39 +20,20 @@ call neobundle#begin(expand('~/.config/nvim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Add or remove your Bundles here:
-" NeoBundle 'Shougo/neosnippet.vim'
-" NeoBundle 'Shougo/neosnippet-snippets'
-"NeoBundle 'Shougo/neocomplete.vim'
-"NeoBundle 'tpope/vim-fugitive'
-" NeoBundle 'Shougo/vimproc.vim', {
-" \ 'build' : {
-" \   'mac' : 'make',
-" \   },
-" \ }
+
 NeoBundle 'thinca/vim-ref'
-" NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
-" NeoBundle 'rking/ag.vim'
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'majutsushi/tagbar'
-"NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'scrooloose/syntastic'
-" NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'jiangmiao/auto-pairs'
-" NeoBundle 'sanmiguel/helpex.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'elmcast/elm-vim'
 NeoBundle 'maralla/vim-toml-enhance', {'depends': 'cespare/vim-toml'}
 NeoBundle '907th/vim-auto-save'
-" "NeoBundle 'rfeldman/node-elm-test'
-"NeoBundle 'haya14busa/incsearch.vim'
-"NeoBundle 'jaxbot/semantic-highlight.vim'
-"eoBundle 'skwp/greplace.vim'
-"NeoBundle 'tpope/vim-endwise'
 NeoBundle 'ayu-theme/ayu-vim'
-" NeoBundle 'jceb/vim-orgmode'
 
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -140,35 +121,35 @@ nnoremap n nzz
 set relativenumber
 set number
 
-" Following lines are taken from a blog post 
-" https://blog.nickpierson.name/colemak-vim/
-" Remap movement for Colemak
-noremap n j
-noremap e k
-noremap i l
-noremap k n
-noremap s i
-noremap j e
+" " Following lines are taken from a blog post 
+" " https://blog.nickpierson.name/colemak-vim/
+" " Remap movement for Colemak
+" noremap n j
+" noremap e k
+" noremap i l
+" noremap k n
+" noremap s i
+" noremap j e
 
-" Remap splits for Colemak / Ease of Use
-noremap <C-H> <C-W><C-H>
-noremap <C-N> <C-W><C-J>
-noremap <C-E> <C-W><C-K>
-noremap <C-I> <C-W><C-L>
+" " Remap splits for Colemak / Ease of Use
+" noremap <C-H> <C-W><C-H>
+" noremap <C-N> <C-W><C-J>
+" noremap <C-E> <C-W><C-K>
+" noremap <C-I> <C-W><C-L>
 
-" Destroy arrow keys in insert mode
-inoremap <Up> <Nop>
-inoremap <Down> <Nop>
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
+" " Destroy arrow keys in insert mode
+" inoremap <Up> <Nop>
+" inoremap <Down> <Nop>
+" inoremap <Left> <Nop>
+" inoremap <Right> <Nop>
 
-" Make arrow keys useful
-noremap <Up> ddkP
-noremap <Down> ddp
-noremap <Left> <<
-noremap <Right> >>
-vmap <Left> <gv
-vmap <Right> >gv
+" " Make arrow keys useful
+noremap <S-Up> ddkP
+noremap <S-Down> ddp
+" noremap <Left> <<
+" noremap <Right> >>
+" vmap <Left> <gv
+" vmap <Right> >gv
 
 :syntax on
 ":filetype plugin indent on
@@ -288,15 +269,15 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
 
 set background=dark
-colorscheme twilight256
+" colorscheme twilight256
   " set termguicolors     " enable true colors support
   " let ayucolor="light"  " for light version of theme
   " let ayucolor="mirage" " for mirage version of theme
   " let ayucolor="dark"   " for dark version of theme
-  " colorscheme ayu
+colorscheme ayu
 " highlight Normal ctermbg=NONE
 " colorscheme monochrome
-colorscheme solarized
+" colorscheme solarized
 
 " Display extra whitespace and leading tabs
 " stolen from Tim Pope (https://github.com/tpope/tpope/blob/master/.vimrc)
