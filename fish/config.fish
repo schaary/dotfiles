@@ -50,43 +50,47 @@ function parse_svn_revision
 end
 
 function fish_prompt -d "Write out the prompt"
-  printf '[' (set_color green)
-  printf '%s' (set_color green) (date +"%H:%M:%S") (set_color normal)
-  printf '] ' (set_color normal)
-
-  if [ (whoami) = "nmaef" ]
-    printf '%s' (set_color brown) (whoami) (set_color normal)
+  if test $TERM = "dumb"
+    echo "\$ "
   else
-    printf '%s' (set_color red) (whoami) (set_color normal)
+    printf '[' (set_color green)
+    printf '%s' (set_color green) (date +"%H:%M:%S") (set_color normal)
+    printf '] ' (set_color normal)
+
+    if [ (whoami) = "nmaef" ]
+      printf '%s' (set_color brown) (whoami) (set_color normal)
+    else
+      printf '%s' (set_color red) (whoami) (set_color normal)
+    end
+
+    printf '%s@' (set_color brown)
+
+    printf '%s' (set_color brown) (hostname|cut -d . -f 1) (set_color normal)
+
+    # Color writeable dirs green, read-only dirs red
+    if test -w "."
+      printf ' %s%s' (set_color green) (prompt_pwd)
+    else
+      printf ' %s%s' (set_color red) (prompt_pwd)
+    end
+
+    # Print subversion tag or branch
+    if test -d ".svn"
+      printf ' %s%s%s' (set_color normal) (set_color blue) (parse_svn_tag_or_branch)
+    end
+
+    # Print subversion revision
+    if test -d ".svn"
+      printf '%s%s@%s' (set_color normal) (set_color blue) (parse_svn_revision)
+    end
+
+    # Print git branch
+    set tmpvar (parse_git_branch)
+    if test -n "$tmpvar"
+      printf ' %s%s[%s]' (set_color normal) (set_color blue) (parse_git_branch)
+    end
+    printf '%s λ ' (set_color normal)
   end
-
-  printf '%s@' (set_color brown)
-
-  printf '%s' (set_color brown) (hostname|cut -d . -f 1) (set_color normal)
-
-  # Color writeable dirs green, read-only dirs red
-  if test -w "."
-    printf ' %s%s' (set_color green) (prompt_pwd)
-  else
-    printf ' %s%s' (set_color red) (prompt_pwd)
-  end
-
-  # Print subversion tag or branch
-  if test -d ".svn"
-    printf ' %s%s%s' (set_color normal) (set_color blue) (parse_svn_tag_or_branch)
-  end
-
-  # Print subversion revision
-  if test -d ".svn"
-    printf '%s%s@%s' (set_color normal) (set_color blue) (parse_svn_revision)
-  end
-
-  # Print git branch
-  set tmpvar (parse_git_branch)
-  if test -n "$tmpvar"
-    printf ' %s%s[%s]' (set_color normal) (set_color blue) (parse_git_branch)
-  end
-  printf '%s λ ' (set_color normal)
 end
 
 if test -d "/opt/java"
